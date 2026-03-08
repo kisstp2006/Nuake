@@ -10,7 +10,7 @@ project 'yoga'
 	staticruntime "on"
 	warnings 'Off'
 	optimize 'Speed'
-	cppdialect "C++20"
+	cppdialect "C++latest"
 
 	includedirs {
 		'yoga/'

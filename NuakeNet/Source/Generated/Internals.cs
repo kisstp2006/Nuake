@@ -13,5 +13,7 @@ public class Internals
     internal static unsafe delegate*<void>ExampleModuleExampleFunctionICall;
     internal static unsafe delegate*<NativeString,void>ExampleModuleExampleModuleLog16ICall;
 
+    // FidelityFXModule
+
 }
 }

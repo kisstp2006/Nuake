@@ -10,7 +10,7 @@ project 'msdf-gen'
 	staticruntime "on"
 	warnings 'Off'
 	optimize 'Speed'
-	cppdialect "C++20"
+	cppdialect "C++latest"
 
 	includedirs {
 		'msdf-atlas-gen/include',
@@ -53,7 +53,7 @@ project 'msdf-atlas-gen'
 	staticruntime "on"
 	warnings 'Off'
 	optimize 'Speed'
-	cppdialect "C++20"
+	cppdialect "C++latest"
 
 	includedirs {
 		'msdf-atlas-gen/include',

@@ -7767,10 +7767,10 @@ VKAPI_ATTR void VKAPI_CALL vkGetDeviceImageSparseMemoryRequirements(
 #endif
 
 
-// VK_VERSION_1_4 is a preprocessor guard. Do not pass it to API calls.
-#define VK_VERSION_1_4 1
-// Vulkan 1.4 version number
-#define VK_API_VERSION_1_4 VK_MAKE_API_VERSION(0, 1, 4, 0)// Patch version should always be set to 0
+
+// VK_VERSION_1_4 is intentionally undefined to force Vulkan 1.3 compatibility
+// #define VK_VERSION_1_4 1
+// #define VK_API_VERSION_1_4 VK_MAKE_API_VERSION(0, 1, 4, 0)
 
 #define VK_MAX_GLOBAL_PRIORITY_SIZE       16U
 

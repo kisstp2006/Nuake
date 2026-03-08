@@ -5,7 +5,7 @@ project "Nuake"
     staticruntime "On"
 
     language "C++"
-    cppdialect "C++20"
+    cppdialect "C++latest"
     
     local moduleSources = {}
 
@@ -140,6 +140,7 @@ project "Nuake"
         {
             "MultiProcessorCompile",
         }
+        buildoptions { "/bigobj" }
     
     filter "configurations:Debug"
         runtime "Debug"

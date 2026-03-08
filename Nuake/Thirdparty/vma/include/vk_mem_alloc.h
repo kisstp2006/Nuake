@@ -133,9 +133,8 @@ extern "C" {
 #endif
 
 #if !defined(VMA_VULKAN_VERSION)
-    #if defined(VK_VERSION_1_4)
-        #define VMA_VULKAN_VERSION 1004000
-    #elif defined(VK_VERSION_1_3)
+    /* Vulkan 1.4 intentionally disabled for compatibility. */
+    #if defined(VK_VERSION_1_3)
         #define VMA_VULKAN_VERSION 1003000
     #elif defined(VK_VERSION_1_2)
         #define VMA_VULKAN_VERSION 1002000

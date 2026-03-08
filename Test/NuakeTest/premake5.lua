@@ -2,7 +2,7 @@ project "NuakeTest"
     kind "ConsoleApp"
     staticruntime "On"
     language "C++"
-    cppdialect "C++20"
+    cppdialect "C++latest"
     
     defines
     {

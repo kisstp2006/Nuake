@@ -23,7 +23,9 @@ newaction {
 -- ║               WORKSPACE               ║
 -- ╚═══════════════════════════════════════╝
 workspace "Nuake"
-    conformancemode "On"
+    if conformancemode then
+        conformancemode "On"
+    end
 	
 	startproject "Editor"
 	

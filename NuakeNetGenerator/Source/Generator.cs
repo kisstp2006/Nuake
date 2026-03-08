@@ -132,8 +132,22 @@ class Generator
 
     static void Main()
     {
-        // Read file bindings.json
-        string fullPath = Path.Combine(AppContext.BaseDirectory, "../../../../Editor/Build/Debug/Binaries/bindings.json");
+        // Resolve repository root regardless of current build configuration folder.
+        string repoRoot = Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "../../../../../"));
+        string[] bindingCandidates =
+        {
+            Path.Combine(repoRoot, "bindings.json"),
+            Path.Combine(repoRoot, "Editor", "Build", "Debug", "Binaries", "bindings.json"),
+            Path.Combine(repoRoot, "Editor", "Build", "Release", "Binaries", "bindings.json"),
+            Path.Combine(repoRoot, "Editor", "Build", "Dist", "Binaries", "bindings.json")
+        };
+
+        string fullPath = bindingCandidates.FirstOrDefault(File.Exists);
+        if (string.IsNullOrEmpty(fullPath))
+        {
+            throw new FileNotFoundException("Could not find bindings.json in expected repository paths.");
+        }
+
         Console.WriteLine(fullPath);
         string json = File.ReadAllText(fullPath);
 
@@ -169,7 +183,8 @@ class Generator
         // WriteFiles
         foreach (var module in filesToWrite)
         {
-            string fullfilePath = Path.Combine(AppContext.BaseDirectory, "../../../../NuakeNet/Source/Generated");
+            string fullfilePath = Path.Combine(repoRoot, "NuakeNet", "Source", "Generated");
+            Directory.CreateDirectory(fullfilePath);
             string filePath = Path.Combine(fullfilePath, module.FileName);
             File.WriteAllText(filePath, module.Content);
             Console.WriteLine($"Wrote {module.FileName} to {filePath}");

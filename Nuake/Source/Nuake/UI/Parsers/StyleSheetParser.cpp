@@ -283,7 +283,7 @@ void StyleSheetParser::ParseStyleRule(KatanaRule* rule, StyleSheetPtr styleSheet
 					break;
 					case KatanaValueUnit::KATANA_VALUE_PARSER_HEXCOLOR:
 					{
-						int r, g, b, a = 255;
+						int r = 0, g = 0, b = 0, a = 255;
 						int result = sscanf_s(value->string, "%02x%02x%02x%02x", &r, &g, &b, &a);
 						propValue.value.Color = Color(r, g, b, a);
 						propValue.type = PropValueType::Color;
@@ -291,7 +291,7 @@ void StyleSheetParser::ParseStyleRule(KatanaRule* rule, StyleSheetPtr styleSheet
 					break;
 					case KatanaValueUnit::KATANA_VALUE_RGBCOLOR:
 					{
-						int r, g, b, a = 255;
+						int r = 0, g = 0, b = 0, a = 255;
 						Logger::Log("RGB COLOR DETECTED" + std::string(value->string));
 						propValue.value.Color = Color(r, g, b, a);
 						propValue.type = PropValueType::Color;

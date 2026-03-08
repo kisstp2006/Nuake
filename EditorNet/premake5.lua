@@ -1,3 +1,5 @@
+include "../Nuake/Thirdparty/Coral/Premake/CSExtensions.lua"
+
 project "EditorNet"
     language "C#"
     dotnetframework "net8.0"
@@ -10,12 +12,12 @@ project "EditorNet"
     objdir (intBinaryOutputDir)
     debugdir (binaryOutputDir)
 
-    vsprops {
-        AppendTargetFrameworkToOutputPath = "false",
-        Nullable = "enable",
-        CopyLocalLockFileAssemblies = "true",
-        EnableDynamicLoading = "true",
-        IntermediateOutputPath = intBinaryOutputDir
+    propertytags {
+        "AppendTargetFrameworkToOutputPath", "false",
+        "Nullable", "enable",
+        "CopyLocalLockFileAssemblies", "true",
+        "EnableDynamicLoading", "true",
+        "IntermediateOutputPath", intBinaryOutputDir
     }
 
     files 

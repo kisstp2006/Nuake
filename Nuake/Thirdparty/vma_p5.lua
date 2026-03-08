@@ -3,7 +3,7 @@ project "vma"
 	location "vma"
     kind "StaticLib"
     language "C++"
-	cppdialect "C++20"
+    cppdialect "C++latest"
     staticruntime "on"
 
     -- Include the headers

@@ -89,7 +89,7 @@ project "Runtime"
     }
 
     filter "system:windows"
-        cppdialect "C++20"
+        cppdialect "C++latest"
         staticruntime "On"
         defines {
             "NK_WIN"

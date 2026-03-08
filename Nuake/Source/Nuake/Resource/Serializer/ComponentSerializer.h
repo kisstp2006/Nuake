@@ -90,12 +90,12 @@ namespace Nuake
 					std::string value = fieldVal.cast<std::string>();
 					cursor[displayName] = value;
 				}
-				else if (auto prop = dataType.prop(HashedFieldPropName::IsEnum); prop)
-				{
-					auto enumMeta = dataType.type();
-					// Fallback to integer value if name not available
-					cursor[displayName] = static_cast<int>(fieldVal.cast<int>());
-				}
+				   else if (dataType.type().is_enum())
+				   {
+					   auto enumMeta = dataType.type();
+					   // Fallback to integer value if name not available
+					   cursor[displayName] = static_cast<int>(fieldVal.cast<int>());
+				   }
 			}
 
 			return jsonSnippet;

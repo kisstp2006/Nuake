@@ -11,7 +11,7 @@ project 'assimp'
 	warnings 'Off'
 	optimize 'Speed'
 
-	cppdialect "C++20"
+	cppdialect "C++latest"
 
 	includedirs {
 		'build/',
